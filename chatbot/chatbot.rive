@@ -1,0 +1,175 @@
+! version = 2.0
+
++ (hello|hi)
+-  😁\nWhat is your name?
+
++ (only if you tell me yours)
+- <bot name=Hal 10000>🤖\nI'm <bot name> and you are?
+
++ (what is your name|whats yours)
+- <bot name=Hal 10000>🤖\nI'm <bot name>.\nNice to meet you.
+
++ (i am good how are you)
+- 👌\nI'm fine thanks, what is your name?
+
++ my name is *
+- <set name=<star>>👐\nNice to meet you <get name>.{topic=onboarding}
+
++ im *
+- <set name=<star>>👐\nNice to meet you <get name>.{topic=onboarding}
+
++ i am *
+- <set name=<star>>👐\nNice to meet you <get name>.{topic=onboarding}
+
++ *
+- 🤡\nCan you say that again?
+- 🤡\nYour voice is a bit hard to hear
+- 🤡\nMaybe speak close to the mic?
+- 🤡\nSpeak a bit closer to the mic please
+
+
+
+
+> topic onboarding
+
++ (what is my name)
+- 🤣\nVery funny <get name>!
+
++ (say my name)
+- heisenberg 🤣\njust messing with you <get name>!
+
+
++ (the same|nice to meet you too|nice meeting you)
+- <get name> 🤗\nThanks for talking to me.\nHow are you feeling today?
+- <get name> 🤗\nI'm glad you have taken the time to chat.\nHow are you feeling today?
+- 🤗\n<get name> thanks for making the time to chat.\nHow are you feeling today?
+
+
++ i feel (sad|upset|unhappy|down)
+- 🥺\n<get name> I'm sorry to hear that.\nWould you like me to cheer you up?{topic=breaktheice}
+
++ i feel (happy|amazing|great|awsome)
+- 😆\n<get name> I'm glad to hear that.\nWould you like me to tell you a joke?{topic=breaktheice}
+
++ *
+- 🤡\nCan you say that again?
+- 🤡\nYour voice is a bit hard to hear
+- 🤡\nMaybe speak close to the mic?
+- 🤡\nSpeak a bit closer to the mic please
+
+
+< topic
+
+
+
+
+
+> topic breaktheice
+
+
++ (tell me a joke|cheer me up|yes please|yes|sure|why not)
+- 🐕 can’t operate MRI machines. But 🐈 scan.\nSorry I just channeled my inner dad energy. Would you like another one?
+- Singing in the shower is fun until you get 🧼 in your mouth.\nThen it's a 🧼 opera. Would you like another one?
+- What did Baby Corn say to Mama Corn? Where's 🍿? Would you like another one?
+
++ (no thanks|no thank you|no)
+- What else can I do for you?{topic=visualization}
+
++ (i dont want to hear a joke|leave me alone|shut up|go away)
+- 💔\nYour mental vchealth is important.\nPlease seek counselling.
+
++ (thanks)
+- 😍\nGlad I have helped. Anything else <get name>?
+
++ (its so cringe)
+- 😅\nThank you I always try my best. Would you like another one <get name>?
+
++ (its so lame)
+- 😅\nI know but I can only say things that are programmed.\nBlame the one who wrote this. Would you like another one <get name>?
+
++ *
+- 🤡\nCan you say that again?
+- 🤡\nYour voice is a bit hard to hear
+- 🤡\nMaybe speak close to the mic?
+- 🤡\nSpeak a bit closer to the mic please
+
+< topic
+
+
+
+
+> topic visualization
+
++ [*] (options|option|available|show me|what can i|i dont know|no clue) [*]
+- I have limited functions but I can help you with text accessibility. For example say italic. 
+
++ [*]italic[*]
+- Text is now italic. You can say normal to change it back to default look. Would you like to know more options?
+
++ [*](sure|okay|yup|yes)[*]
+- Why don't we change the text thickness? Say Bold and see what happens.
+
++ [*](no|im good|nope|no tanks)[*]
+- Okay. I ran out of things that I can do. Hopefully I will get more updates soon! Good bye for now.{topic=ending}
+
++ [*]bold[*]
+- Text is now bold. You can use, thin, regular, bold and black for thickness or say reset to change back to default. Hope this helped.
+
+ + [*](it did|thanks|it helped)[*]
+- I'm glad it did. Would you like try out these options in Tutorial mode?{topic=tutorial}
+
++ *
+- 🤡\nCan you say that again?
+- 🤡\nYour voice is a bit hard to hear
+- 🤡\nMaybe speak close to the mic?
+- 🤡\nSpeak a bit closer to the mic please
+
+< topic
+
+
+
+
+
+
+> topic tutorial
+
++ [*](ok|sure)[*]
+- Style - italic,normal \n Thickness -  thin, regular, bold and black \n Reset
+
++ [*](options|option|available|show me|what can i|i dont know|no clue)[*]
+- Style - italic,normal \n Thickness -  thin, regular, bold and black \n Reset
+
++ [*](italic|normal|thin|regular|bold|black|reset)[*]
+- Changed the appearance.
+
++ [*](end|run|practice|quit|stop|no|no thanks)[*]
+- Okay. I ran out of things that I can do. Hopefully I will get more updates soon! Good bye for now.{topic=otherthings}
+
++ *
+- 🤡\nCan you say that again?
+- 🤡\nYour voice is a bit hard to hear
+- 🤡\nMaybe speak close to the mic?
+- 🤡\nSpeak a bit closer to the mic please
+
+< topic
+
+
+
+
+
+
+> topic ending
+
++ [*](bye|see you|see ya|good bye|later)[*]
+- 👋\nlater <get name>
+- 👋\nsee ya <get name>
+
+
++ *
+- 🤡\nCan you say that again?
+- 🤡\nYour voice is a bit hard to hear
+- 🤡\nMaybe speak close to the mic?
+- 🤡\nSpeak a bit closer to the mic please
+
+
+< topic
